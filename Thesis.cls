@@ -211,6 +211,32 @@
     \newpage
 }
 
+
+%% ----------------------------------------------------------------------
+%%    Setting up the \backcover command for the back page
+%% ----------------------------------------------------------------------
+
+\newcommand*{\backcover}{
+    %% Use the Tikz library positioning and clear the page header and footer
+    \usetikzlibrary{positioning}
+    \thispagestyle{empty}
+
+    %% Construct the cover page with Tikz
+    \begin{tikzpicture}[overlay,remember picture]
+
+        %% Add the cover image
+        \node[above=0,inner sep=0] at (current page.south) {%
+            \includegraphics[width=\paperwidth]{\@coverimage}};
+
+        %% Add the affiliation on the left
+        % \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%
+        %     \ifdefvoid{\@affiliation}{}{\color{white}\titlestyle\@affiliation}};
+
+    \end{tikzpicture}
+    \newpage
+}
+
+
 %% Establish commands for the subtitle, subject, affiliation, cover image and table of authors
 \newcommand*{\subtitle}[1]{\def\@subtitle{#1}}
 \newcommand*{\subject}[1]{\def\@subject{#1}}
