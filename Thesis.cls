@@ -141,6 +141,31 @@
 \usepackage{Configurations/10-Macros}
 \usepackage{Configurations/11-Metadata}
 
+%% ----------------------------------------------------------------------
+%%    Setting up the fonts
+%% ----------------------------------------------------------------------
+
+\ifPDFTeX
+    %% With pdfLaTeX, use Paletino as the main font and Roboto Slab as title fonts
+    \RequirePackage[T1]{fontenc}  % Select T1 font encoding
+    \RequirePackage{newpxtext}    % Palatino-like font...
+    \RequirePackage{newpxmath}    % ...with support for mathematics
+
+    \newcommand{\titlestyle}{\fontfamily{RobotoSlab-TLF}\fontseries{light}\selectfont}
+    \newcommand{\largetitlestyle}{\fontfamily{RobotoSlab-TLF}\fontseries{thin}\selectfont}
+\else
+    
+    \RequirePackage[no-math]{fontspec} % Advanced font selection
+
+    %% Use Arial as the main font and Roboto Slab as title fonts
+    \setmainfont{Arial}
+    \setmathsf{Arial}
+    \setmathtt{Arial}
+
+    \newfontfamily\titlestyle{Roboto Slab Light}
+    \newfontfamily\largetitlestyle{Roboto Slab Thin}
+\fi
+
 
 %% ----------------------------------------------------------------------
 %%    Setting up the \makecover command for the cover page

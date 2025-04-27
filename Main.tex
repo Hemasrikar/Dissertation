@@ -22,21 +22,19 @@
 
 \begin{document}
 
-%%% Front Matter %%%
-% \include{Matter/00-Cover}
-% \include{Matter/01-Front-Page}
 
 %% Define the main parameters
-\title{A Title to the Report}
-\subtitle{A Catchy Optional Subtitle \\ that Grabs the Attention}
-\author{Author}
-
-\subject{AB1234: Optional Course Name} % Cover only
-\affiliation{Delft University of Technology} % Cover only
+\title{A Title to the Dissertation }
+\subtitle{\GetSubtitle }
+\author{\GetFirstAuthor}
+\subject{\GetDegree} % Cover only
+\affiliation{\GetUniversity } % Cover only
 \coverimage{Figures/cover.jpg} % Aspect ratio of 2:3 (portrait) recommended
 \definecolor{title}{HTML}{4884d6} % Color for cover title
 
 \makecover
+
+\input{Metadata/title-report}
 
 %%% Copyright Statement %%%
 \include{Matter/02-Copyright}
