@@ -2,9 +2,16 @@
 
 \begin{center}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.25]{Figures/university_crest.png}
+\end{figure}
+
+\vfill
+
 %% Print the title
 {\makeatletter
-\largetitlestyle\fontsize{45}{45}\selectfont\@title
+\largetitlestyle\fontsize{38}{38}\selectfont\@title
 \makeatother}
 
 %% Print the subtitle
@@ -38,22 +45,14 @@ by
 
 \bigskip
 \bigskip
-
 \vfill
-
-%% Add a source and description for the cover and optional attribution for the template
-\begin{tabular}{p{15mm}p{10cm}}
-    Cover: & Canadarm 2 Robotic Arm Grapples SpaceX Dragon by NASA under CC BY-NC 2.0 (Modified) \\
-    % Feel free to remove the following attribution, it is not required - still appreciated :-)
-    Style: & TU Delft Report Style, with modifications by Daan Zwaneveld
-\end{tabular}
 
 \end{center}
 
 %% Insert the TU Delft logo at the bottom of the page
 \begin{tikzpicture}[remember picture, overlay]
     \node[above=10mm] at (current page.south) {%
-        \includegraphics{Figures/logo-black}
+        \includegraphics[scale=0.16]{Figures/logo-black}
     };
 \end{tikzpicture}
 
