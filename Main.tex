@@ -23,8 +23,20 @@
 \begin{document}
 
 %%% Front Matter %%%
-\include{Matter/00-Cover}
-\include{Matter/01-Front-Page}
+% \include{Matter/00-Cover}
+% \include{Matter/01-Front-Page}
+
+%% Define the main parameters
+\title{A Title to the Report}
+\subtitle{A Catchy Optional Subtitle \\ that Grabs the Attention}
+\author{Author}
+
+\subject{AB1234: Optional Course Name} % Cover only
+\affiliation{Delft University of Technology} % Cover only
+\coverimage{Figures/cover.jpg} % Aspect ratio of 2:3 (portrait) recommended
+\definecolor{title}{HTML}{4884d6} % Color for cover title
+
+\makecover
 
 %%% Copyright Statement %%%
 \include{Matter/02-Copyright}

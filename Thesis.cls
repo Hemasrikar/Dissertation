@@ -140,3 +140,54 @@
 \usepackage{Configurations/09-Code}
 \usepackage{Configurations/10-Macros}
 \usepackage{Configurations/11-Metadata}
+
+
+%% ----------------------------------------------------------------------
+%%    Setting up the \makecover command for the cover page
+%% ----------------------------------------------------------------------
+
+\newcommand*{\makecover}{
+    %% Use the Tikz library positioning and clear the page header and footer
+    \usetikzlibrary{positioning}
+    \thispagestyle{empty}
+
+    %% Construct the cover page with Tikz
+    \begin{tikzpicture}[overlay,remember picture]
+
+        %% Add the cover image
+        \node[above=0,inner sep=0] at (current page.south) {%
+            \includegraphics[width=\paperwidth]{\@coverimage}};
+
+        %% Add the affiliation on the left
+        \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%
+            \ifdefvoid{\@affiliation}{}{\color{white}\titlestyle\@affiliation}};
+
+        %% Add the logo in the bottom left
+        \node[above right=10mm] at (current page.south west) {%
+            \includegraphics[width=0.35\linewidth]{Figures/logo-white.pdf}};
+
+        %% Add the banner with the title, subtitle, subject and author(s)
+        \node[below=2cm,fill=black!85,minimum width={\paperwidth},inner ysep=25pt,opacity=0.6,text opacity=1] at (current page.north) {%
+            \begin{minipage}{0.9\paperwidth}
+                %% Format and add the title
+                \color{title}\raggedright\largetitlestyle\fontsize{50}{50}\selectfont%
+                    \@title \\[0.5ex]
+                %% Format and add (optional) subtitle and subject
+                \color{white}\titlestyle\fontsize{22}{22}\selectfont%
+                    \ifdefvoid{\@subtitle}{}{\@subtitle \\[2.5ex]}%
+                    \ifdefvoid{\@subject}{}{\@subject \\[0.5ex]}
+                %% Format and add author or table of authors
+                \largetitlestyle\fontsize{24}{24}\selectfont%
+                    \ifdefvoid{\@covertable}{\@author}{\@covertable}
+            \end{minipage}};
+
+    \end{tikzpicture}
+    \newpage
+}
+
+%% Establish commands for the subtitle, subject, affiliation, cover image and table of authors
+\newcommand*{\subtitle}[1]{\def\@subtitle{#1}}
+\newcommand*{\subject}[1]{\def\@subject{#1}}
+\newcommand*{\affiliation}[1]{\def\@affiliation{#1}}
+\newcommand*{\coverimage}[1]{\def\@coverimage{#1}}
+\newcommand*{\covertable}[1]{\def\@covertable{#1}}
