@@ -96,9 +96,9 @@
     \ifthenelse{\equal{\MediaOption}{paper}}{\blankpage}{\clearpage}%
 }
 
-% Update various elements based on the '\MediaOption' value.
-\apptocmd{\tableofcontents}{\MediaOptionLogic}{}{\fail}
-\apptocmd{\listoffigures}{\MediaOptionLogic}{}{\fail}
+%%% Update various elements based on the '\MediaOption' value.  %%%
+% \apptocmd{\tableofcontents}{\MediaOptionLogic}{}{\fail}
+% \apptocmd{\listoffigures}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\listoftables}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\printnormalglossary}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\printacronymglossary}{\MediaOptionLogicAcr}{}{\fail}

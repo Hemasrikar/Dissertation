@@ -35,18 +35,16 @@
 \makecover
 
 \input{Metadata/title-report}
-
-%%% Copyright Statement %%%
 \include{Matter/02-Copyright}
+\MediaOptionLogicBlank    %% Intentional Blank Page
 
 %%% Roman Numeration %%%
 \pagenumbering{roman}
 
-%%% Acknowledgements %%%
 \include{Matter/03-Acknowledgements}
-
-%%% Abstract %%%
+\MediaOptionLogicBlank    %% Intentional Blank Page
 \include{Chapters/00-Abstract}
+\MediaOptionLogicBlank    %% Intentional Blank Page
 
 %%% Table of Contents, List of Figures and List of Tables %%%
 \bookmarktocentry\tableofcontents
@@ -72,11 +70,13 @@
 %%% Appendices: Work that *YOU* Developed %%%
 \appendix
 \input{Matter/06-Appendices}
+\MediaOptionLogicBlank    %% Intentional Blank Page
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
 %%% Annexes: Work that *YOU DID NOT* Develop %%%
 \input{Matter/07-Annexes}
+\MediaOptionLogicBlank    %% Intentional Blank Page
 \input{Chapters/Annexes/00-AnnexA}
 
 %%% Back Page %%%

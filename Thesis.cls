@@ -123,6 +123,8 @@
 \RequirePackage[english,calc,datesep={/}]{datetime2} % To get date and time
 \RequirePackage{titletoc}
 \RequirePackage{float}
+\RequirePackage{mdframed}
+\RequirePackage{xcolor}
 
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
@@ -244,3 +246,5 @@
 \newcommand*{\affiliation}[1]{\def\@affiliation{#1}}
 \newcommand*{\coverimage}[1]{\def\@coverimage{#1}}
 \newcommand*{\covertable}[1]{\def\@covertable{#1}}
+
+
