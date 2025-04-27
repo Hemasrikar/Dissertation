@@ -202,11 +202,15 @@
                 %% Format and add (optional) subtitle and subject
                 \color{white}\titlestyle\fontsize{18}{18}\selectfont%
                     \ifdefvoid{\@subtitle}{}{\textbf{\@subtitle} \\[2.5ex]}%
+                    %% Format and add author or table of authors
+                \largetitlestyle\fontsize{20}{20}\selectfont%
+                    \ifdefvoid{\@author}{}{\textbf{\@author} \\[0.5ex]}%
+                    % {\textbf{5716485} \\[1.5ex]}%
+                \color{white}\titlestyle\fontsize{18}{18}\selectfont%
                     \ifdefvoid{\@subject}{}{\textbf{\@subject} \\[0.5ex]}
 
-                %% Format and add author or table of authors
-                \largetitlestyle\fontsize{20}{20}\selectfont%
-                    \ifdefvoid{\@covertable}{\textbf{\@author}}{\@covertable}
+                
+
             \end{minipage}};
 
     \end{tikzpicture}
