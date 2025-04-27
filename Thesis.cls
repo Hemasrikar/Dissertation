@@ -197,14 +197,15 @@
             \begin{minipage}{0.9\paperwidth}
                 %% Format and add the title
                 \color{title}\raggedright\largetitlestyle\fontsize{33}{30}\selectfont%
-                    \@title \\[0.5ex]
+                    \textbf{\@title} \\[0.5ex]
                 %% Format and add (optional) subtitle and subject
                 \color{white}\titlestyle\fontsize{18}{18}\selectfont%
-                    \ifdefvoid{\@subtitle}{}{\@subtitle \\[2.5ex]}%
-                    \ifdefvoid{\@subject}{}{\@subject \\[0.5ex]}
+                    \ifdefvoid{\@subtitle}{}{\textbf{\@subtitle} \\[2.5ex]}%
+                    \ifdefvoid{\@subject}{}{\textbf{\@subject} \\[0.5ex]}
+
                 %% Format and add author or table of authors
                 \largetitlestyle\fontsize{20}{20}\selectfont%
-                    \ifdefvoid{\@covertable}{\@author}{\@covertable}
+                    \ifdefvoid{\@covertable}{\textbf{\@author}}{\@covertable}
             \end{minipage}};
 
     \end{tikzpicture}
