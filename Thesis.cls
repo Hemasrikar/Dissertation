@@ -123,8 +123,7 @@
 \RequirePackage[english,calc,datesep={/}]{datetime2} % To get date and time
 \RequirePackage{titletoc}
 \RequirePackage{float}
-\RequirePackage{mdframed}
-\RequirePackage{xcolor}
+\RequirePackage{hyperref}
 
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.

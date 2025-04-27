@@ -1,7 +1,10 @@
 %%% Document Colors %%%
+\usepackage{tocloft}
 
 % Color used in the links
 \definecolor{maincolor}{HTML}{145DA0}
+\definecolor{section}{HTML}{073F93}
+\definecolor{subsection}{HTML}{4360BA}
 
 % Color used in the numeration of the chapter style 'classic'.
 \definecolor{chapternumbercolor}{HTML}{073F93}
@@ -14,3 +17,9 @@
 \definecolor{tip}{HTML}{1a7f37}
 \definecolor{warning}{HTML}{9a6700}
 \definecolor{todo}{HTML}{d1242f}
+
+%% Table of Contents Color
+\renewcommand{\cftchapfont}{\hypersetup{linkcolor=black}}
+\renewcommand{\cftsecfont}{\hypersetup{linkcolor=section}}
+\renewcommand{\cftsubsecfont}{\hypersetup{linkcolor=subsection}}
+

@@ -1,4 +1,5 @@
 %%% Custom ToC Entries %%%
+
 \newcommand{\bookmarktocentry}{\pdfbookmark[0]{\contentsname}{toc}}
 \ProvideDocumentCommand\MakeLinkTarget{sO{}m}{}
 \patchcmd{\listoffigures}
@@ -34,3 +35,7 @@
 % Align LoF and LoT entries to the corrected margin.
 \renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}} % Default: 1.5em/2.3em
 \let\l@table\l@figure
+
+
+
+
