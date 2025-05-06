@@ -124,6 +124,7 @@
 \RequirePackage{titletoc}
 \RequirePackage{float}
 \RequirePackage{hyperref}
+\RequirePackage{multirow}
 
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
