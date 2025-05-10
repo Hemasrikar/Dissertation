@@ -84,7 +84,7 @@
     \ifthenelse{\equal{\MediaOption}{paper}}{\plainblankpage}{\thispagestyle{plain}}%
 }
 
-\newcommand{\MediaOptionLogicAcr}{%
+\newcommand{\IntentionalBlankPageAcr}{%
     \ifthenelse{\equal{\MediaOption}{paper}}{\plainblankpage}{\clearpage\thispagestyle{plain}}%
 }
 
@@ -101,5 +101,5 @@
 % \apptocmd{\listoffigures}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\listoftables}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\printnormalglossary}{\MediaOptionLogic}{}{\fail}
-\apptocmd{\printacronymglossary}{\MediaOptionLogicAcr}{}{\fail}
+\apptocmd{\printacronymglossary}{\IntentionalBlankPageAcr}{}{\fail}
 \pretocmd{\printbibliography}{\MediaOptionLogic}{}{\fail}
