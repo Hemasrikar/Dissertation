@@ -150,6 +150,7 @@
 \fi
 
 
+
 %% ----------------------------------------------------------------------
 %%    Setting up the \makecover command for the cover page
 %% ----------------------------------------------------------------------
@@ -172,10 +173,11 @@
 
         %% Add the logo in the bottom left
         % \node[above right=10mm] at (current page.south west) {%
-        %     \includegraphics[scale=0.16]{Figures/logo-white}};
+        %     \includegraphics[scale=0.16]{Figure}};
 
         %% Add the banner with the title, subtitle, subject and author(s)
-        \node[below=2cm,fill=black!85,minimum width={\paperwidth},inner ysep=25pt,opacity=0.6,text opacity=1] at (current page.north) {%
+        
+        \node[below=2cm,fill=black!92,minimum width={\paperwidth},inner ysep=25pt,opacity=0.6,text opacity=1] at (current page.north) {%
             \begin{minipage}{0.9\paperwidth}
                 %% Format and add the title
                 \color{title}\raggedright\largetitlestyle\fontsize{33}{30}\selectfont%
