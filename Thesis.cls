@@ -14,22 +14,6 @@
 }
 
 \keys_define:nn { Thesis } {
-    school .choices:nn =
-        { estg, esecs, esslei, esad, estm }
-        { \tl_gset:Nn \g_Thesis_myschool_tl { #1 } },
-    school / unknown .code:n = 
-        { \ClassWarningNoLine{Thesis}
-        {Specified~'school'~not~available.~Defaulting~to~'estg'} },
-    school .default:n = { estg },
-    school .initial:n = { estg },
-
-    coverstyle .choices:nn =
-        { classic, bw }
-        { \tl_gset:Nn \g_Thesis_mycover_tl { #1 } },
-    coverstyle / unknown .code:n = 
-        { \ClassWarningNoLine{Thesis}{Specified~'coverstyle'~not~available.~Defaulting~to~'classic'} },
-    coverstyle .default:n = { classic },
-    coverstyle .initial:n = { classic },
 
     chapterstyle .choices:nn = 
         { classic, fancy, modern } 
