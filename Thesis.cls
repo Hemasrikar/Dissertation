@@ -1,7 +1,6 @@
 
 %%% Class Information %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{Thesis}[2023/12/12 Thesis Class]
 
 \RequirePackage{expl3} % Required for writing LaTeX3 code in this class.
 
@@ -54,9 +53,6 @@
         { \ClassWarningNoLine{Thesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
 }
 
-% \newcommand{\LanguageOption}{\g_Thesis_mylanguage_tl}
-\newcommand{\SchoolOption}{\g_Thesis_myschool_tl}
-\newcommand{\CoverOption}{\g_Thesis_mycover_tl}
 \newcommand{\ChapterOption}{\g_Thesis_style_tl}
 \newcommand{\DocStageOption}{\g_Thesis_docstage_tl}
 \newcommand{\MediaOption}{\g_Thesis_media_tl}
