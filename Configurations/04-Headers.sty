@@ -15,11 +15,11 @@
 % Inner side -> Author number
 % Center     -> Section/chapter name
 % Outer side -> Page number
-\fancyhead[OLH]{\textit{ID:\GetFirstAuthorNumber}\vspace{3pt}}       % Odd left header (inner)
-\fancyhead[ERH]{\textit{ID:\GetFirstAuthorNumber}\vspace{3pt}}       % Even right header (inner)
-\fancyhead[C]{\ifnum\value{section}=0\leftmark\else\rightmark\fi\vspace{3pt}} % Center header
-\fancyhead[ORH]{\thepage\vspace{3pt}}                              % Odd right header (outer)
-\fancyhead[ELH]{\thepage\vspace{3pt}}                              % Even left header (outer)
+\fancyhead[OLH]{\textcolor{maincolor}{\textit{ID:\GetFirstAuthorNumber}}\vspace{3pt}}  % Odd left header (inner)
+\fancyhead[ERH]{\textcolor{maincolor}{\textit{ID:\GetFirstAuthorNumber}}\vspace{3pt}}  % Even right header (inner)
+\fancyhead[C]{\textcolor{headertext}{\ifnum\value{section}=0\leftmark\else\rightmark\fi}\vspace{3pt}}  % Center header
+\fancyhead[ORH]{\thepage\vspace{3pt}}     % Odd right header (outer)
+\fancyhead[ELH]{\thepage\vspace{3pt}}     % Even left header (outer)
 
 % Style for plain pages (e.g., chapter starting pages).
 \fancypagestyle{plain}{%
@@ -37,4 +37,5 @@
 \ifthenelse{\equal{\DocStageOption}{working}}{%
     \fancyfoot[OCF,ECF]{\small\GetDocumentVersion~-~\textit{\today}}%
 }{}
+
 
