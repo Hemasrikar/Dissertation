@@ -14,14 +14,6 @@
 
 \keys_define:nn { Thesis } {
 
-    chapterstyle .choices:nn = 
-        { classic, fancy, modern } 
-        { \tl_gset:Nn \g_Thesis_style_tl { #1 } },
-    chapterstyle / unknown .code:n = 
-        { \ClassWarningNoLine{Thesis}{Specified~'chapterstyle'~not~available.~Defaulting~to~'classic'} },
-    chapterstyle .default:n = { classic },
-    chapterstyle .initial:n = { classic },
-
     docstage .choices:nn = 
         { working, final } 
         { \tl_gset:Nn \g_Thesis_docstage_tl { #1 } },
@@ -53,7 +45,6 @@
         { \ClassWarningNoLine{Thesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
 }
 
-\newcommand{\ChapterOption}{\g_Thesis_style_tl}
 \newcommand{\DocStageOption}{\g_Thesis_docstage_tl}
 \newcommand{\MediaOption}{\g_Thesis_media_tl}
 \newcommand{\DocTypeOption}{g_Thesis_doctype_tl}
@@ -103,8 +94,6 @@
 \RequirePackage[english,calc,datesep={/}]{datetime2} % To get date and time
 \RequirePackage{titletoc}
 \RequirePackage{float}
-\RequirePackage{hyperref}
-\RequirePackage{multirow}
 
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
