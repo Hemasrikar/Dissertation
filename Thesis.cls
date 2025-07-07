@@ -166,19 +166,19 @@
 
         %% Add the banner with the title, subtitle, subject and author(s)
         
-        \node[below=2cm,fill=black!92,minimum width={\paperwidth},inner ysep=25pt,opacity=0.6,text opacity=1] at (current page.north) {%
+        \node[below=4cm,fill=black!92,minimum width={\paperwidth},inner ysep=25pt,opacity=0.5,text opacity=1] at (current page.north) {%
             \begin{minipage}{0.9\paperwidth}
                 %% Format and add the title
-                \color{title}\raggedright\largetitlestyle\fontsize{33}{30}\selectfont%
+                \color{title}\raggedright\largetitlestyle\fontsize{22}{22}\selectfont%
                     \textbf{\@title} \\[0.5ex]
                 %% Format and add (optional) subtitle and subject
                 \color{white}\titlestyle\fontsize{18}{18}\selectfont%
                     \ifdefvoid{\@subtitle}{}{\textbf{\@subtitle} \\[2.5ex]}%
                     %% Format and add author or table of authors
-                \largetitlestyle\fontsize{20}{20}\selectfont%
+                \largetitlestyle\fontsize{18}{18}\selectfont%
                     \ifdefvoid{\@author}{}{\textbf{\@author} \\[0.5ex]}%
                     % {\textbf{5716485} \\[1.5ex]}%
-                \color{white}\titlestyle\fontsize{18}{18}\selectfont%
+                \color{white}\titlestyle\fontsize{14}{14}\selectfont%
                     \ifdefvoid{\@subject}{}{\textbf{\@subject} \\[0.5ex]}
 
                 

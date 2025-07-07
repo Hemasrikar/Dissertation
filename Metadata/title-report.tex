@@ -1,25 +1,103 @@
 
-\pagenumbering{gobble} % Prevent page numbering.
+% \pagenumbering{gobble} % Prevent page numbering.
+
+% \begin{titlepage}
+
+% \begin{center}
+% \vspace{3cm}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[scale=0.2]{Figures/logo/university_crest.png}
+% \end{figure}
+
+
+% \begin{large}
+%     \textbf{University of Warwick} \\
+%     September 2026
+% \end{large}
+
+% \vspace{2cm}
+
+% %% Print the title
+% {\makeatletter
+% \largetitlestyle\fontsize{20}{20}\selectfont\@title
+% \makeatother}
+
+% %% Print the subtitle
+% {\makeatletter
+% \ifdefvoid{\@subtitle}{}{\bigskip\titlestyle\fontsize{18}{18}\selectfont\@subtitle}
+% \makeatother}
+
+% \bigskip
+% \bigskip
+
+% by
+
+% \bigskip
+% \bigskip
+
+% %% Print the name of the author
+% {\makeatletter
+% \largetitlestyle\fontsize{16}{16}\selectfont\@author
+% \makeatother}
+
+% \bigskip
+% \bigskip
+
+% %% Print some more information at the bottom
+% \begin{tabular}{ll}
+%     Student ID: & \GetFirstAuthorNumber \\
+%     Instructor: & I. Surname \\
+%     Teaching Assistant: & I. Surname \\
+%     Project Duration: & 2025 - 2026 \\
+%     Faculty: & Faculty of Mathematics, Statistics and Finance
+% \end{tabular}
+
+% \bigskip
+% \bigskip
+% \vfill
+
+% \end{center}
+
+% %% Insert the Warwick logo at the bottom of the page
+% % \begin{figure}[H]
+% %     \centering
+% %     \begin{tikzpicture}[remember picture, overlay]
+% %     \node[above=10mm] at (current page.south) {%
+% %         \includegraphics[scale=0.04]{Figures/logo/warwick.jpg}
+% %     };
+% % \end{tikzpicture}
+% % \end{figure}
+
+% \end{titlepage}
+
 
 \begin{titlepage}
+\centering
 
-\begin{center}
+\vspace*{\fill} % push to vertical center
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.25]{Figures/logo/university_crest.png}
-\end{figure}
+\begin{minipage}{0.9\textwidth}
+\centering
 
-\vfill
+\includegraphics[scale=0.2]{Figures/logo/university_crest.png}
+
+\vspace{2cm}
+\begin{Large}
+    \textbf{University of Warwick} \\
+    September 2026
+\end{Large}
+
+\vspace{1cm}
 
 %% Print the title
 {\makeatletter
-\largetitlestyle\fontsize{38}{38}\selectfont\@title
+\largetitlestyle\fontsize{16}{16}\selectfont\@title
 \makeatother}
 
 %% Print the subtitle
 {\makeatletter
-\ifdefvoid{\@subtitle}{}{\bigskip\titlestyle\fontsize{20}{20}\selectfont\@subtitle}
+\ifdefvoid{\@subtitle}{}{\bigskip\titlestyle\fontsize{14}{14}\selectfont\@subtitle}
 \makeatother}
 
 \bigskip
@@ -32,7 +110,7 @@ by
 
 %% Print the name of the author
 {\makeatletter
-\largetitlestyle\fontsize{25}{25}\selectfont\@author
+\largetitlestyle\fontsize{12}{12}\selectfont\@author
 \makeatother}
 
 \bigskip
@@ -43,24 +121,11 @@ by
     Student ID: & \GetFirstAuthorNumber \\
     Instructor: & I. Surname \\
     Teaching Assistant: & I. Surname \\
-    Project Duration: & 2025 - 2026 \\
+    Project Duration: & 2025 -- 2026 \\
     Faculty: & Faculty of Mathematics, Statistics and Finance
 \end{tabular}
+\end{minipage}
 
-\bigskip
-\bigskip
-\vfill
-
-\end{center}
-
-%% Insert the Warwick logo at the bottom of the page
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[remember picture, overlay]
-    \node[above=10mm] at (current page.south) {%
-        \includegraphics[scale=0.04]{Figures/logo/warwick.jpg}
-    };
-\end{tikzpicture}
-\end{figure}
+\vspace*{\fill} % push to vertical center
 
 \end{titlepage}
