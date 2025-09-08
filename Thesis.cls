@@ -1,10 +1,10 @@
 
-%%% Class Information %%%
+%% Class Information
 \NeedsTeXFormat{LaTeX2e}
 
 \RequirePackage{expl3} % Required for writing LaTeX3 code in this class.
 
-%%% Handle Class Options %%%
+%% Handle Class Options
 \ExplSyntaxOn
 
 \cs_new:Npn \Thesis_check_color:n #1 {
@@ -52,10 +52,10 @@
 \ProcessKeyOptions[Thesis]
 \ExplSyntaxOff
 
-%%% Load Master Class %%%
+%% Load Master Class
 \LoadClass[a4paper,twoside,11pt]{report}
 
-%%% Required Packages %%%
+%% Required Packages
 \RequirePackage{ifthen} % Provides conditional statements.
 \RequirePackage{etoolbox} % Advanced programming tools for LaTeX.
 \RequirePackage{graphicx} % For including and manipulating images.
@@ -114,11 +114,6 @@
 \usepackage{Configurations/Contents}
 \usepackage{Configurations/Margins}
 \usepackage{Configurations/Macros}
-
-
-
-
-
 
 %% ----------------------------------------------------------------------
 %%    Setting up the fonts
@@ -187,11 +182,7 @@
                     % {\textbf{5716485} \\[1.5ex]}%
                 \color{white}\titlestyle\fontsize{14}{14}\selectfont%
                     \ifdefvoid{\@subject}{}{\textbf{\@subject} \\[0.5ex]}
-
-                
-
             \end{minipage}};
-
     \end{tikzpicture}
     \newpage
 }
@@ -220,7 +211,6 @@
     \end{tikzpicture}
     \newpage
 }
-
 
 %% Establish commands for the subtitle, subject, affiliation, cover image and table of authors
 \newcommand*{\subtitle}[1]{\def\@subtitle{#1}}

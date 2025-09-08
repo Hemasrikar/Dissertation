@@ -1,17 +1,16 @@
 
-%%% Document Options %%%
+%% Document Options 
 \documentclass[
     docstage=working,
     media=paper
 ]{Thesis}
 
-%%% Document Version %%%
+%% Document Version 
 \DocumentVersion{2.1.0} % This is required only if the 'docstage' is set to 'working'.
 
-%%% Document Metadata %%%
 \input{Metadata/Metadata}
 
-%%% Loading of Glossary and Acronyms %%%
+%% Loading of Glossary and Acronyms 
 \makeglossaries
 \loadglsentries{Matter/Glossary}
 \loadglsentries[\acronymtype]{Matter/Acronyms}
@@ -35,7 +34,7 @@
 \include{Matter/Copyright}
 \IntentionalBlankPage   %% Intentional Blank Page
 
-%%% Roman Numeration %%%
+%% Roman Numeration 
 \pagenumbering{roman}
 
 \include{Matter/Acknowledgements}
@@ -43,39 +42,39 @@
 \include{Chapters/00-Abstract}
 \IntentionalBlankPage    %% Intentional Blank Page
 
-%%% Table of Contents, List of Figures and List of Tables %%%
+%% Table of Contents, List of Figures and List of Tables
 \bookmarktocentry\tableofcontents
 \listoffigures
 \listoftables
 
-%%% Print: Glossary and Acronyms %%%
+%% Print: Glossary and Acronyms
 \glossarytoc\printnormalglossary
 \acronymtoc\printacronymglossary
 
-%%% Arabic Numeration %%%
+%% Arabic Numeration
 \pagenumbering{arabic}
 
 %%% Chapters %%%
 \include{Chapters/01-User-Guide}
 \include{Chapters/02-Latex-Tutorial}
 
-%%% Bibliography %%%
+%% Bibliography
 \renewcommand{\refname}{Bibliography}
 \printbibliography[title={\refname},heading=bibintoc]
 
-%%% Appendices: Work that *YOU* Developed %%%
+%% Appendices: Work that *YOU* Developed
 \appendix
 \input{Matter/Appendices}
 \IntentionalBlankPage   %% Intentional Blank Page
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
-%%% Annexes: Work that *YOU DID NOT* Develop %%%
+%% Annexes: Work that *YOU DID NOT* Develop
 \input{Matter/Annexes}
 \IntentionalBlankPage   %% Intentional Blank Page
 \input{Chapters/Annexes/00-AnnexA}
 
-%%% Back Page %%%
+%% Back Page
 \backcover
 
 \end{document}
