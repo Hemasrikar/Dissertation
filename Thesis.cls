@@ -99,19 +99,26 @@
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
 \WarningsOff[blindtext] % Suppress warnings from the blindtext package.
 
-%%% Import Configurations - Maintain the Specified Order! %%%
-\usepackage{Configurations/00-Fonts}
-\usepackage{Configurations/01-Colors}
-\usepackage{Configurations/02-Margins}
-\usepackage{Configurations/03-References}
-\usepackage{Configurations/04-Headers}
-\usepackage{Configurations/05-Contents}
-\usepackage{Configurations/06-Glossary}
-\usepackage{Configurations/07-Chapters}
-\usepackage{Configurations/08-Tables}
-\usepackage{Configurations/09-Code}
-\usepackage{Configurations/10-Macros}
-\usepackage{Configurations/11-Metadata}
+%% Import Configurations %%
+\usepackage{Configurations/Chapters}
+\usepackage{Configurations/Code}
+\usepackage{Configurations/Colors}
+\usepackage{Configurations/Fonts}
+\usepackage{Configurations/Glossary}
+\usepackage{Configurations/Headers}
+\usepackage{Configurations/Metadata}
+\usepackage{Configurations/Tables}
+
+%% Maintain the Specified Order %%
+\usepackage{Configurations/References}
+\usepackage{Configurations/Contents}
+\usepackage{Configurations/Margins}
+\usepackage{Configurations/Macros}
+
+
+
+
+
 
 %% ----------------------------------------------------------------------
 %%    Setting up the fonts
