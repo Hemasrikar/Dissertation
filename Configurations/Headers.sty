@@ -1,57 +1,36 @@
 %% Header and Footer
 
-\usepackage{fancyhdr} % For custom headers and footers.
-\usepackage[bottom,hang]{footmisc} % Align footnotes to the bottom.
+\RequirePackage{fancyhdr}
+\RequirePackage[bottom,hang]{footmisc}
+\RequirePackage{ifthen}
 
+% Clear default header/footer
 \pagestyle{fancy}
-\fancyhf{} % Clear default header and footer style.
-\renewcommand{\headrulewidth}{.3pt} % Set a thin line for the header rule.
-\setlength{\footnotemargin}{6pt} % Set margin space for footnotes.
-
-% \renewcommand{\chaptermark}[1]{\markboth{\textit{\thechapter. #1}}{}}
-% \renewcommand{\sectionmark}[1]{\markright{\textit{\thesection. #1}}}
-
-% % Header layout:
-% % Inner side -> Author number
-% % Center     -> Section/chapter name
-% % Outer side -> Page number
-% \fancyhead[OLH]{\textcolor{maincolor}{\textit{ID:\GetFirstAuthorNumber}}\vspace{3pt}}  % Odd left header (inner)
-% \fancyhead[ERH]{\textcolor{maincolor}{\textit{ID:\GetFirstAuthorNumber}}\vspace{3pt}}  % Even right header (inner)
-% \fancyhead[C]{\textcolor{headertext}{\ifnum\value{section}=0\leftmark\else\rightmark\fi}\vspace{3pt}}  % Center header
-% \fancyhead[ORH]{\thepage\vspace{3pt}}     % Odd right header (outer)
-% \fancyhead[ELH]{\thepage\vspace{3pt}}     % Even left header (outer)
-
-% Style for plain pages (e.g., chapter starting pages).
-% \fancypagestyle{plain}{
-%     \fancyhf{} % Clear header and footer.
-%     \renewcommand{\headrulewidth}{0pt} % Remove header rule.
-%     \fancyfoot[ORF,ELF]{\thepage\vspace{3pt}} % Page number bottom outside.
-
-%     % Add document version to footer for working stage.
-%     \ifthenelse{\equal{\DocStageOption}{working}}{
-%         \fancyfoot[OCF,ECF]{\small\GetDocumentVersion~-~\textit{\today}}
-%     }{}
-% }
-
-% Document version in footer for working stage in all pages
-\ifthenelse{\equal{\DocStageOption}{working}}{
-    \fancyfoot[L]{\small\GetDocumentVersion~-~\textit{\today}}%
-}{}
-
-
-% Store section title for use in footers
-\renewcommand{\sectionmark}[1]{\markright{#1}}
-
-% Default pages: footer right with section name and page number
-\fancyfoot[R]{\rightmark\quad\thepage}
-
-% No header line
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footnotemargin}{6pt}
 
-% Chapter-opening pages (plain style): footer left
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+% Footer: section name + page number on the right
+\fancyfoot[R]{\rightmark\quad\thepage}
+\fancyfoot[L]{}
+
+% Remove inner margin offset for twoside documents
+\fancyhfoffset[R]{0pt}
+\fancyhfoffset[L]{0pt} 
+
+% Document version in working stage (appears on left)
+\ifthenelse{\isundefined{\DocStageOption}}{}{
+  \ifthenelse{\equal{\DocStageOption}{working}}{
+      \fancyfoot[L]{\small\GetDocumentVersion~-~\textit{\today}}%
+  }{}
+}
+
+% Chapter-opening pages
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyfoot[L]{\rightmark\quad\thepage}
+  \fancyfoot[R]{\rightmark\quad\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
