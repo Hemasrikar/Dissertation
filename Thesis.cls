@@ -99,7 +99,7 @@
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
 \WarningsOff[blindtext] % Suppress warnings from the blindtext package.
 
-%% Import Configurations %%
+%% Import Configurations
 \usepackage{Configurations/Chapters}
 \usepackage{Configurations/Code}
 \usepackage{Configurations/Colors}
@@ -109,7 +109,7 @@
 \usepackage{Configurations/Metadata}
 \usepackage{Configurations/Tables}
 
-%% Maintain the Specified Order %%
+%% Maintain the Specified Order
 \usepackage{Configurations/References}
 \usepackage{Configurations/Contents}
 \usepackage{Configurations/Margins}
@@ -139,7 +139,6 @@
     \newfontfamily\titlestyle{Roboto Slab Light}
     \newfontfamily\largetitlestyle{Roboto Slab Thin}
 \fi
-
 
 
 %% ----------------------------------------------------------------------
@@ -192,7 +191,7 @@
 %%    Setting up the \backcover command for the back page
 %% ----------------------------------------------------------------------
 
-\newcommand*{\backcover}{
+\newcommand*{\imagecover}[1]{
     %% Use the Tikz library positioning and clear the page header and footer
     \usetikzlibrary{positioning}
     \thispagestyle{empty}
@@ -202,7 +201,7 @@
 
         %% Add the cover image
         \node[above=0,inner sep=0] at (current page.south) {%
-            \includegraphics[width=\paperwidth]{\@coverimage}};
+            \includegraphics[width=\paperwidth]{#1}};
 
         %% Add the affiliation on the left
         % \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%

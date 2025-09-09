@@ -1,10 +1,10 @@
-%% Tables %%
+%% Tables
 \newcommand{\customtableformatting}{\renewcommand{\arraystretch}{1.1}\small}
 \AtBeginEnvironment{tabular}{\customtableformatting} % Apply to tabular.
 \AtBeginEnvironment{tabularx}{\customtableformatting} % Apply to tabularx.
 \preto\longtable{\customtableformatting} % Apply to longtable.
 
-%%% Captions %%%
+%% Captions
 \captionsetup{skip=6pt} % Whitespace between figures/tables and the caption.
 \captionsetup{
     labelfont={bf,small},
@@ -12,5 +12,5 @@
 } % Caption font style.
 \captionsetup[table]{skip=4pt}
 
-%%% Lists %%%
+%% Lists
 \setlist{noitemsep} % Customise spacing around and inside lists.

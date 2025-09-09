@@ -1,4 +1,4 @@
-%% Code Highlighting %%
+%% Code Highlighting
 \newenvironment{code}{\captionsetup{type=listing}}{}
 {%
     \SetupFloatingEnvironment{listing}{name=Listing,within=none}
@@ -18,7 +18,7 @@
     breakanywhere=true
 }
 
-% Change line number color to gray (Frade's suggestion).
-\renewcommand{\theFancyVerbLine}{%
+% Code number line color to gray.
+\renewcommand{\theFancyVerbLine}{
     \scriptsize\textcolor[rgb]{0.7,0.7,0.7}{\arabic{FancyVerbLine}}%
 }
