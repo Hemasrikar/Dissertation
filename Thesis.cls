@@ -158,14 +158,15 @@
             \includegraphics[width=\paperwidth]{\@coverimage}};
 
         %% Add the affiliation on the left
-        \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%
-            \ifdefvoid{\@affiliation}{}{\color{white}\titlestyle\@affiliation}};
+        % \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%
+        %     \ifdefvoid{\@affiliation}{}{\color{white}\titlestyle\@affiliation}};
 
         %% Add the logo in the bottom left
         % \node[above right=10mm] at (current page.south west) {%
         %     \includegraphics[scale=0.16]{Figure}};
 
         %% Add the banner with the title, subtitle, subject and author(s)
+
         
         \node[below=4cm,fill=black!92,minimum width={\paperwidth},inner ysep=25pt,opacity=0.5,text opacity=1] at (current page.north) {%
             \begin{minipage}{0.9\paperwidth}
@@ -191,7 +192,32 @@
 %%    Setting up the \backcover command for the back page
 %% ----------------------------------------------------------------------
 
-\newcommand*{\imagecover}[1]{
+\newcommand*{\backcover}{
+    %% Use the Tikz library positioning and clear the page header and footer
+    \usetikzlibrary{positioning}
+    \thispagestyle{empty}
+
+    %% Construct the cover page with Tikz
+    \begin{tikzpicture}[overlay,remember picture]
+
+        %% Add the cover image
+        \node[above=0,inner sep=0] at (current page.south) {%
+            \includegraphics[width=\paperwidth]{\@coverimage}};
+
+        % Add the affiliation on the left
+        \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%
+            \ifdefvoid{\@affiliation}{}{\color{white}\titlestyle\@affiliation}};
+
+    \end{tikzpicture}
+    \newpage
+}
+
+%% ----------------------------------------------------------------------
+%%    Setting up the \imagecover command for the any page
+%% ----------------------------------------------------------------------
+
+
+\newcommand*{\imagepage}[1]{
     %% Use the Tikz library positioning and clear the page header and footer
     \usetikzlibrary{positioning}
     \thispagestyle{empty}
@@ -203,10 +229,22 @@
         \node[above=0,inner sep=0] at (current page.south) {%
             \includegraphics[width=\paperwidth]{#1}};
 
-        %% Add the affiliation on the left
-        % \node[rotate=90,below right=40mm and 3mm] at (current page.west) {%
-        %     \ifdefvoid{\@affiliation}{}{\color{white}\titlestyle\@affiliation}};
-
+        \node[below=4cm,fill=black!92,minimum width={\paperwidth},inner ysep=25pt,opacity=0.5,text opacity=1] at (current page.north) {%
+            \begin{minipage}{0.9\paperwidth}
+                %% Format and add the title
+                \color{title}\raggedright\largetitlestyle\fontsize{22}{22}\selectfont%
+                    \textbf{\@title} \\[0.5ex]
+                %% Format and add (optional) subtitle and subject
+                \color{white}\titlestyle\fontsize{18}{18}\selectfont%
+                    \ifdefvoid{\@subtitle}{}{\textbf{\@subtitle} \\[2.5ex]}%
+                    %% Format and add author or table of authors
+                \largetitlestyle\fontsize{18}{18}\selectfont%
+                    \ifdefvoid{\@author}{}{\textbf{\@author} \\[0.5ex]}%
+                    % {\textbf{5716485} \\[1.5ex]}%
+                \color{white}\titlestyle\fontsize{14}{14}\selectfont%
+                    \ifdefvoid{\@subject}{}{\textbf{\@subject} \\[0.5ex]}
+            \end{minipage}};
+   
     \end{tikzpicture}
     \newpage
 }
