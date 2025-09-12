@@ -85,7 +85,7 @@
       {\printtext[labelnumberwidth]{\printfield{labelnumber}\adddot}}
       {%
         \setlength{\labelwidth}{1.5cm}% width reserved for numbers
-        \setlength{\labelsep}{1.5cm}% space between number and line
+        \setlength{\labelsep}{1.25cm}% space between number and line
         \setlength{\leftmargin}{\bibleftmargin}% text starts here
         \setlength{\itemindent}{0pt}%
         \setlength{\itemsep}{\bibitemsep}%
@@ -94,7 +94,7 @@
     % Draw vertical line
     \AddToShipoutPictureBG*{%
       \begin{tikzpicture}[remember picture,overlay]
-        \draw[line width=0.6pt]
+        \draw[line width=0.6pt, draw=gray!90]
           ($ (current page.north west) + (\biblineoffset,-1cm) $)
           --
           ($ (current page.south west) + (\biblineoffset,1cm) $);
@@ -102,7 +102,3 @@
   }
   {\endlist\ClearShipoutPictureBG}
   {\item}
-
-
-
-
