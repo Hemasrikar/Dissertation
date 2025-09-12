@@ -62,3 +62,47 @@
 
 % Add a "." after the number in the PDF bookmark.
 \def\Hy@numberline#1{\ifHy@bookmarksnumbered{#1.\hspace{0.3em}}\else#1\fi}
+
+
+\DeclareFieldFormat{labelnumber}{#1}
+\DeclareFieldFormat{labelnumberwidth}{#1}
+
+
+% Continuous vertical line with numeric labels on the left
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usetikzlibrary{calc}
+
+% Adjust positions
+\newlength{\biblineoffset}   
+\setlength{\biblineoffset}{3cm}   % vertical line position
+\newlength{\bibleftmargin}   
+\setlength{\bibleftmargin}{1.4cm} % where bibliography text starts
+
+\defbibenvironment{bibliography}
+  {%
+    \list
+      {\printtext[labelnumberwidth]{\printfield{labelnumber}\adddot}}
+      {%
+        \setlength{\labelwidth}{1.5cm}% width reserved for numbers
+        \setlength{\labelsep}{1.5cm}% space between number and line
+        \setlength{\leftmargin}{\bibleftmargin}% text starts here
+        \setlength{\itemindent}{0pt}%
+        \setlength{\itemsep}{\bibitemsep}%
+        \setlength{\parsep}{\bibparsep}%
+      }%
+    % Draw vertical line
+    \AddToShipoutPictureBG*{%
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[line width=0.6pt]
+          ($ (current page.north west) + (\biblineoffset,-1cm) $)
+          --
+          ($ (current page.south west) + (\biblineoffset,1cm) $);
+      \end{tikzpicture}}%
+  }
+  {\endlist\ClearShipoutPictureBG}
+  {\item}
+
+
+
+
