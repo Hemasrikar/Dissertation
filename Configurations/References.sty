@@ -1,15 +1,14 @@
-%% Bibliography
+%% Bibliography %%
 \usepackage[
 	backend=biber, % Use Biber for bibliography compilation.
 	citestyle=authoryear, % Style for in-text citations.
-	bibstyle=authoryear, % Style for the bibliography.
+	bibstyle=numeric, % Style for the bibliography.
 	sorting=nyt, % Sort references by name, year, and title.
     natbib=true, % Enable natbib compatibility.
-    dashed=false, % Always display author names in the bibliography.
     uniquelist=false % Display only the first author (e.g., Author et al., Year).
 ]{biblatex}
 
-\setlength\bibitemsep{2\itemsep} % Increase spacing between bibliography items.
+\setlength\bibitemsep{1.5\itemsep} % Increase spacing between bibliography items.
 \setlength\bibhang{0pt} % Remove hanging indent for bibliography entries.
 \addbibresource{Bibliography/Bibliography.bib} % Load the bibliography file.
 
@@ -56,9 +55,9 @@
 \hypersetup{
     bookmarksnumbered, % Enables the chapter and section numbers within the PDF bookmarks.
 	colorlinks=true, % Enable colored text for links.
-	urlcolor=reflinkcolor, % Color for \url and \href links.
-	linkcolor=reflinkcolor, % Color for internal links (e.g., \nameref).
-	citecolor=reflinkcolor, % Color for citation links.
+	urlcolor=maincolor, % Color for \url and \href links.
+	linkcolor=maincolor, % Color for internal links (e.g., \nameref).
+	citecolor=maincolor, % Color for citation links.
 }
 
 % Add a "." after the number in the PDF bookmark.
