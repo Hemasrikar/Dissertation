@@ -12,6 +12,58 @@
 \setlength\bibhang{0pt} % Remove hanging indent for bibliography entries.
 \addbibresource{Bibliography/Bibliography.bib} % Load the bibliography file.
 
+
+\DeclareFieldFormat{labelnumber}{#1}
+\DeclareFieldFormat{labelnumberwidth}{#1}
+
+
+%Custom Bibiligraphy title
+\defbibheading{custombib}[\refname]{%
+  \chapter*{}% start a new chapter page, but no automatic title
+  \addcontentsline{toc}{chapter}{#1}% add Bibliography to ToC
+  \markboth{#1}{#1}%
+  \vspace*{-5.9cm} % adjust vertical placement after empty chapter
+  \hspace*{1.35cm}%
+  {\crimsonfont\fontsize{26.8}{30}\selectfont \textbf{#1}}%
+  \vspace{1cm} % <-- space between title and bibliography entries
+}
+
+
+% Continuous vertical line with numeric labels on the left
+\usepackage{eso-pic}
+\usetikzlibrary{calc}
+
+% Adjust positions
+\newlength{\biblineoffset}   
+\setlength{\biblineoffset}{3cm}   % vertical line position
+\newlength{\bibleftmargin}   
+\setlength{\bibleftmargin}{1.4cm} % where bibliography text starts
+
+\defbibenvironment{bibliography}
+  {%
+    \list
+      {\printtext[labelnumberwidth]{\printfield{labelnumber}\adddot}}
+      {%
+        \setlength{\labelwidth}{1.5cm}% width reserved for numbers
+        \setlength{\labelsep}{0.8cm}% space between number and line
+        \setlength{\leftmargin}{\bibleftmargin}% text starts here
+        \setlength{\itemindent}{0pt}%
+        \setlength{\itemsep}{\bibitemsep}%
+        \setlength{\parsep}{\bibparsep}%
+      }%
+    % Draw vertical line
+    \AddToShipoutPictureBG*{%
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[line width=0.6pt, draw=gray!90]
+          ($ (current page.north west) + (\biblineoffset,-1cm) $)
+          --
+          ($ (current page.south west) + (\biblineoffset,1cm) $);
+      \end{tikzpicture}}%
+  }
+  {\endlist\ClearShipoutPictureBG}
+  {\item}
+
+
 % Configure citation style to include both author and year prominently.
 \ExecuteBibliographyOptions{maxcitenames=1}
 \DeclareFieldFormat{citehyperref}{%
@@ -63,41 +115,3 @@
 % Add a "." after the number in the PDF bookmark.
 \def\Hy@numberline#1{\ifHy@bookmarksnumbered{#1.\hspace{0.3em}}\else#1\fi}
 
-
-\DeclareFieldFormat{labelnumber}{#1}
-\DeclareFieldFormat{labelnumberwidth}{#1}
-
-
-% Continuous vertical line with numeric labels on the left
-\usepackage{eso-pic}
-\usetikzlibrary{calc}
-
-% Adjust positions
-\newlength{\biblineoffset}   
-\setlength{\biblineoffset}{3cm}   % vertical line position
-\newlength{\bibleftmargin}   
-\setlength{\bibleftmargin}{1.4cm} % where bibliography text starts
-
-\defbibenvironment{bibliography}
-  {%
-    \list
-      {\printtext[labelnumberwidth]{\printfield{labelnumber}\adddot}}
-      {%
-        \setlength{\labelwidth}{1.5cm}% width reserved for numbers
-        \setlength{\labelsep}{1.25cm}% space between number and line
-        \setlength{\leftmargin}{\bibleftmargin}% text starts here
-        \setlength{\itemindent}{0pt}%
-        \setlength{\itemsep}{\bibitemsep}%
-        \setlength{\parsep}{\bibparsep}%
-      }%
-    % Draw vertical line
-    \AddToShipoutPictureBG*{%
-      \begin{tikzpicture}[remember picture,overlay]
-        \draw[line width=0.6pt, draw=gray!90]
-          ($ (current page.north west) + (\biblineoffset,-1cm) $)
-          --
-          ($ (current page.south west) + (\biblineoffset,1cm) $);
-      \end{tikzpicture}}%
-  }
-  {\endlist\ClearShipoutPictureBG}
-  {\item}
