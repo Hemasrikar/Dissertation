@@ -1,94 +1,24 @@
-
-% \pagenumbering{gobble} % Prevent page numbering.
-
-% \begin{titlepage}
-
-% \begin{center}
-% \vspace{3cm}
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[scale=0.2]{Figures/logo/university_crest.png}
-% \end{figure}
-
-
-% \begin{large}
-%     \textbf{University of Warwick} \\
-%     September 2026
-% \end{large}
-
-% \vspace{2cm}
-
-% %% Print the title
-% {\makeatletter
-% \largetitlestyle\fontsize{20}{20}\selectfont\@title
-% \makeatother}
-
-% %% Print the subtitle
-% {\makeatletter
-% \ifdefvoid{\@subtitle}{}{\bigskip\titlestyle\fontsize{18}{18}\selectfont\@subtitle}
-% \makeatother}
-
-% \bigskip
-% \bigskip
-
-% by
-
-% \bigskip
-% \bigskip
-
-% %% Print the name of the author
-% {\makeatletter
-% \largetitlestyle\fontsize{16}{16}\selectfont\@author
-% \makeatother}
-
-% \bigskip
-% \bigskip
-
-% %% Print some more information at the bottom
-% \begin{tabular}{ll}
-%     Student ID: & \GetFirstAuthorNumber \\
-%     Instructor: & I. Surname \\
-%     Teaching Assistant: & I. Surname \\
-%     Project Duration: & 2025 - 2026 \\
-%     Faculty: & Faculty of Mathematics, Statistics and Finance
-% \end{tabular}
-
-% \bigskip
-% \bigskip
-% \vfill
-
-% \end{center}
-
-% %% Insert the Warwick logo at the bottom of the page
-% % \begin{figure}[H]
-% %     \centering
-% %     \begin{tikzpicture}[remember picture, overlay]
-% %     \node[above=10mm] at (current page.south) {%
-% %         \includegraphics[scale=0.04]{Figures/logo/warwick.jpg}
-% %     };
-% % \end{tikzpicture}
-% % \end{figure}
-
-% \end{titlepage}
-
+\pagenumbering{gobble} % Prevent page numbering.
 
 \begin{titlepage}
 \centering
 
-\vspace*{\fill} % push to vertical center
+\vspace*{2cm} % push to vertical center
 
 \begin{minipage}{0.9\textwidth}
 \centering
 
 \includegraphics[scale=0.2]{Figures/logo/university_crest.png}
 
-\vspace{2cm}
+\vspace{0.5cm}
 \begin{Large}
-    \textbf{University of Warwick} \\
-    September 2026
+    \textbf{University of Warwick}
 \end{Large}
 
-\vspace{1cm}
+\vspace{1em}
+\noindent\rule{13cm}{1pt}
+
+\vspace{1em}
 
 %% Print the title
 {\makeatletter
@@ -100,12 +30,13 @@
 \ifdefvoid{\@subtitle}{}{\bigskip\titlestyle\fontsize{14}{14}\selectfont\@subtitle}
 \makeatother}
 
-\bigskip
+\vspace{1em}
+\noindent\rule{13cm}{1pt}
+
 \bigskip
 
 by
 
-\bigskip
 \bigskip
 
 %% Print the name of the author
@@ -117,14 +48,23 @@ by
 \bigskip
 
 %% Print some more information at the bottom
+
 \begin{tabular}{ll}
-    Student ID: & \GetFirstAuthorNumber \\
-    Instructor: & I. Surname \\
-    Teaching Assistant: & I. Surname \\
-    Thesis Duration: & 2025 -- 2026 \\
-    Faculty: & Faculty of Mathematics, Statistics and Finance
+    \textit{Student ID}: & \GetFirstAuthorNumber \\
+    \textit{Academic Supervisor}: & I. Surname \\
 \end{tabular}
 \end{minipage}
+
+\vspace{1cm}
+
+\begin{large}
+    A thesis is submitted in partial fulfillment of the \\
+    Master of Science degree in \textit{Mathematical Finance}
+\end{large}
+
+\vspace{1cm}
+
+\today
 
 \vspace*{\fill} % push to vertical center
 
