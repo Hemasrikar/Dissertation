@@ -1,7 +1,7 @@
 # Dissertation-Template
 MSc Mathematical Finance Dissertation Template. Decided to make a template of my own for Master's Thesis to add personal touch instead of the same old thesis template provided by the uni, which probably will be used by everyone in the class. 
 
-This template makes use of styling and elements from the following LaTeX templates:
+This template inspired and made use of the styling and elements from the following LaTeX templates:
 
 - **[TU Delft Report Thesis](https://github.com/dzwaneveld/tudelft-report-thesis-template)** –template by Daan Zwaneveld, licensed under CC BY-NC 4.0.  
 
