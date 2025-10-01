@@ -1,5 +1,5 @@
 # Dissertation-Template
-MSc Mathematical Finance Dissertation Template. Decided to make a template of my own for Master's Thesis to add personal touch instead of the same old thesis template provided by the uni, which probably will be used by everyone in the class. 
+MSc Mathematical Finance Dissertation Template. Decided to make my own template for Master's Thesis to add personal touch instead of the same old thesis template provided by the uni, which probably will be used by everyone in the class. 
 
 This template inspired and made use of the styling and elements from the following LaTeX templates:
 
